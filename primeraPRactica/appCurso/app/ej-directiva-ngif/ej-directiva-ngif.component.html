@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>¿Quien es el mas puto de esta nave?</h3>
+  <input type="text" class="form-control" [(ngModel)]="capital">
+  <p *ngIf="!capital;
+           else correcto">
+           Complete la pregunta
+  </p>
+  <ng-template #correcto>
+    <h4 *ngIf="setResultado();
+              else incorrecto">
+        ¡Correcto! Es Nauzet
+    </h4>
+  </ng-template>
+  <ng-template #incorrecto>
+    <h4 >Lo siento, puedes intentarlo por Nauzet</h4>
+  </ng-template>
+</div>
