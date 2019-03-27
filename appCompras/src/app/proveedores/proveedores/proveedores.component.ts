@@ -10,9 +10,7 @@ export class ProveedoresComponent implements OnInit {
 
   proveedores: any;
 
-  constructor(private proveedoresService: ProveedoresService) {
-
-   }
+  constructor(private proveedoresService: ProveedoresService) { }
 
   ngOnInit() {
     this.proveedores = this.proveedoresService.getProveedores();

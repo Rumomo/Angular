@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ProveedoresService {
 
-  proveedores: any = [
+proveedores: any = [
     {
       nombre: 'Telefónica',
       cif: 'B12345678',
@@ -28,11 +26,13 @@ export class ProveedoresService {
       email: 'info@iberdrola.com',
       contacto: 'Laura Martínez'
     }
-  ];
+];
 
-  constructor() { }
-
-  getProveedores() {
+  getProveedores(){
     return this.proveedores;
   }
+
+
+
+
 }
