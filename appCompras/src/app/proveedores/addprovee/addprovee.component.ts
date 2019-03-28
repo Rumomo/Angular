@@ -12,12 +12,12 @@ export class AddproveeComponent implements OnInit {
   proveedor: any;
 
   provincias: string[] = [ 'Álava','Albacete','Alicante','Almería','Asturias','Ávila','Badajoz',
-  'Barcelona','Burgos', 'Cáceres', 'Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba',
-  'La Coruña','Cuenca','Gerona','Granada','Guadalajara', 'Guipúzcoa','Huelva','Huesca',
-  'IslasBaleares','Jaén','León','Lérida','Lugo','Madrid', 'Málaga','Murcia','Navarra','Orense',
-  'Palencia','Las Palmas','Pontevedra','La Rioja','Salamanca','Segovia','Sevilla','Soria',
-  'Tarragona','Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya',
-  'Zamora','Zaragoza' ];
+     'Barcelona','Burgos', 'Cáceres', 'Cádiz','Cantabria','Castellón','Ciudad Real','Córdoba',
+     'La Coruña','Cuenca','Gerona','Granada','Guadalajara', 'Guipúzcoa','Huelva','Huesca',
+     'IslasBaleares','Jaén','León','Lérida','Lugo','Madrid', 'Málaga','Murcia','Navarra','Orense',
+     'Palencia','Las Palmas','Pontevedra','La Rioja','Salamanca','Segovia','Sevilla','Soria',
+     'Tarragona','Santa Cruz de Tenerife','Teruel','Toledo','Valencia','Valladolid','Vizcaya',
+     'Zamora','Zaragoza' ]
 
   constructor() {
     this.proveedor = {
@@ -30,13 +30,16 @@ export class AddproveeComponent implements OnInit {
       telefono: null,
       email: '',
       contacto: ''
-    };
+    }
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
+
+    console.log(this.formpro);
+
     this.proveedor.nombre = this.formpro.value.nombre;
     this.proveedor.cif = this.formpro.value.cif;
     this.proveedor.direccion = this.formpro.value.direccion;
@@ -49,6 +52,5 @@ export class AddproveeComponent implements OnInit {
 
     this.formpro.reset();
   }
-
 
 }
