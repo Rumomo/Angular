@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { AutenticacionService } from '../../servicios/autenticacion.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-inises',
@@ -22,30 +23,31 @@ export class InisesComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      'email' : ['', [Validators.required, Validators.email] ],
-      'password' : ['', [
+      'email': ['', [ Validators.required, Validators.email ]],
+      'password': ['',[
         Validators.required,
         Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
         Validators.minLength(6)
       ]]
-      });
+    })
   }
 
-  onSubmit() {
+  onSubmit(){
     this.userdata = this.saveUserdata();
     this.autenticacionService.inicioSesion(this.userdata);
     setTimeout(() => {
-      if (this.isAuth() === false) {
+      if(this.isAuth() === false ) {
         this.mensaje = true;
       }
     }, 2000);
   }
 
-  saveUserdata() {
+  saveUserdata(){
     const saveUserdata = {
       email: this.loginForm.get('email').value,
       password: this.loginForm.get('password').value
-    };
+    }
+
     return saveUserdata;
   }
 

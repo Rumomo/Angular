@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,12 +8,11 @@ import * as firebase from 'firebase';
 })
 export class AppComponent implements OnInit {
 
-  ngOnInit() {
+  ngOnInit(){
     firebase.initializeApp({
-      apiKey: "AIzaSyD3VDfBoSxaBCJDGbJLngV0BU0QEIQucsM",
-      authDomain: "comprassapp-966c1.firebaseapp.com"
-    });
+      apiKey: "AIzaSyCnxMaIji7diZ_OoI10NuppCfSxJLbTSWk",
+      authDomain: "comprasapp-b7ee8.firebaseapp.com"
+    })
   }
-
 
 }
