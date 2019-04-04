@@ -5,12 +5,12 @@ import 'rxjs/Rx';
 @Injectable()
 export class PresupuestosService {
 
-  presURL = 'https://comprasapp-b7ee8.firebaseio.com/presupuestos.json';
-  preURL = 'https://comprasapp-b7ee8.firebaseio.com/presupuestos';
+  presURL = 'https://comprassapp-966c1.firebaseio.com/presupuestos.json';
+  preURL = 'https://comprassapp-966c1.firebaseio.com/presupuestos';
 
   constructor(private http: Http ) { }
 
-  postPresupuesto(presupuesto: any) {
+  postPresupuesto(presupuesto: any){
     const newpres = JSON.stringify(presupuesto);
     const headers = new Headers({
       'Content-Type': 'application/json'

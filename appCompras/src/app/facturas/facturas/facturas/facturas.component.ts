@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FacturasService } from '../../facturas.service';
 
 
+
 @Component({
   selector: 'app-facturas',
   templateUrl: './facturas.component.html',

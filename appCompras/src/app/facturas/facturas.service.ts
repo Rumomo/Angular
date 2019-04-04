@@ -5,8 +5,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class FacturasService {
 
-  frasURL = 'https://comprasapp-83618.firebaseio.com/facturas.json';
-  fraURL = 'https://comprasapp-83618.firebaseio.com/facturas';
+  frasURL = 'https://comprassapp-966c1.firebaseio.com/facturas.json';
+  fraURL = 'https://comprassapp-966c1.firebaseio.com/facturas';
 
 
   constructor(private http: Http) { }

@@ -10,8 +10,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     firebase.initializeApp({
-      apiKey: "AIzaSyCnxMaIji7diZ_OoI10NuppCfSxJLbTSWk",
-      authDomain: "comprasapp-b7ee8.firebaseapp.com"
+      apiKey: "AIzaSyD3VDfBoSxaBCJDGbJLngV0BU0QEIQucsM",
+      authDomain: "comprassapp-966c1.firebaseapp.com",
+      databaseURL: "https://comprassapp-966c1.firebaseio.com",
+      projectId: "comprassapp-966c1",
+      storageBucket: "comprassapp-966c1.appspot.com",
+      messagingSenderId: "858777604781"
     })
   }
 

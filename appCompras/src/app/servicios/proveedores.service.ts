@@ -5,12 +5,12 @@ import 'rxjs/Rx';
 @Injectable()
 export class ProveedoresService {
 
-provURL = 'https://comprasapp-b7ee8.firebaseio.com/proveedores.json';
-proURL = 'https://comprasapp-b7ee8.firebaseio.com/proveedores';
+provURL = 'https://comprassapp-966c1.firebaseio.com/proveedores.json';
+proURL = 'https://comprassapp-966c1.firebaseio.com/proveedores';
 
   constructor(private http: Http) { }
 
-    postProveedor(proveedor: any){
+    postProveedor(proveedor: any) {
     const newpres = JSON.stringify(proveedor);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ proURL = 'https://comprasapp-b7ee8.firebaseio.com/proveedores';
       .map( res => {
         console.log(res.json());
         return res.json();
-      })
+      });
   }
 
   getProveedores() {
@@ -36,7 +36,7 @@ proURL = 'https://comprasapp-b7ee8.firebaseio.com/proveedores';
         .map( res => res.json());
   }
 
-  putProveedor(proveedor: any, id$: string){
+  putProveedor(proveedor: any, id$: string) {
     const newpre = JSON.stringify(proveedor);
     const headers = new Headers({
       'Content-Type': 'application/json'
@@ -56,6 +56,12 @@ proURL = 'https://comprasapp-b7ee8.firebaseio.com/proveedores';
     const url = `${this.proURL}/${id$}.json`;
     return this.http.delete( url )
         .map ( res => res.json() );
+  }
+
+  getProveedoresSearch(busqueda: string) {
+    const url = `${ this.provURL }?orderBy="nombre"&startAt="${ busqueda }"&endAt="${ busqueda }\uf8ff"`;
+    return this.http.get(url)
+       .map (res => res.json());
   }
 
 
